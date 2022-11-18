@@ -16,32 +16,41 @@ import { BaseList } from './base-list';
     <button (click)="scroll.scrollToPosition(1500)">Scroll to position 1500</button>
 
     <div class="status">
-        Showing <span>{{scroll.viewPortInfo.startIndex}}</span>
-        - <span>{{scroll.viewPortInfo.endIndex}}</span>
-        of <span>{{filteredList?.length}}</span>
+      Showing <span>{{scroll.viewPortInfo.startIndex}}</span>
+      - <span>{{scroll.viewPortInfo.endIndex}}</span>
+      of <span>{{filteredList?.length}}</span>
       <span>({{scroll.viewPortItems?.length}} nodes)</span>
       <span>[scrollStartPosition: {{scroll.viewPortInfo.scrollStartPosition}}px, scrollEndPosition: {{scroll.viewPortInfo.scrollEndPosition}}px, maxScrollPosition: {{scroll.viewPortInfo.maxScrollPosition}}px ]</span>
     </div>
 
     <virtual-scroller #scroll
-      [items]="filteredList">
+                      [items]="filteredList">
       <table>
-		<thead #header>
-			<th>Index</th>
-			<th>Name</th>
-			<th>Gender</th>
-			<th>Age</th>
-			<th>Address</th>
-		</thead>
-		<tbody #container>
-			<tr *ngFor="let item of scroll.viewPortItems">
-			  <td>{{item.index}}</td>
-			  <td>{{item.name}}</td>
-			  <td>{{item.gender}}</td>
-			  <td>{{item.age}}</td>
-			  <td>{{item.address}}</td>
-			</tr>
-		  </tbody>
+        <thead #header>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Address</th>
+        </thead>
+        <tbody #container>
+        <tr *ngFor="let item of scroll.viewPortItems">
+          <td>{{item.index}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.gender}}</td>
+          <td>{{item.age}}</td>
+          <td>{{item.address}}</td>
+        </tr>
+        </tbody>
+
+        <tfoot #footer>
+          <td>Index</td>
+          <td>Name</td>
+          <td>Gender</td>
+          <td>Age</td>
+          <td>Address footer</td>
+        </tfoot>
+
       </table>
     </virtual-scroller>
   `,
