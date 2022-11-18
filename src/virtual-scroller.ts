@@ -825,7 +825,15 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
         if (this.footerElementRef) {
           let scrollPosition = this.getScrollElement()[this._scrollType];
           let containerOffset = this.getElementsOffset();
-          let offset = Math.min(scrollPosition - viewport.padding - containerOffset + (this.footerElementRef.nativeElement.clientHeight*2) - this.contentElementRef.nativeElement.clientHeight, 0);
+
+					const headerHeight = this.headerElementRef.nativeElement.clientHeight
+					const footerHeight = this.footerElementRef.nativeElement.clientHeight
+					const containerHeight = this.contentElementRef.nativeElement.clientHeight
+
+					let offset = Math.max(scrollPosition - viewport.padding - containerOffset + containerHeight - footerHeight + headerHeight, 0);
+
+          this.renderer.setStyle(this.footerElementRef.nativeElement, 'position', `absolute`);
+          this.renderer.setStyle(this.footerElementRef.nativeElement, 'top', `0`);
           this.renderer.setStyle(this.footerElementRef.nativeElement, 'transform', `${this._translateDir}(${offset}px)`);
           this.renderer.setStyle(this.footerElementRef.nativeElement, 'webkitTransform', `${this._translateDir}(${offset}px)`);
         }
@@ -1199,6 +1207,9 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
 
 		if (this.headerElementRef) {
 			scrollLength += this.headerElementRef.nativeElement.clientHeight;
+		}
+		if (this.footerElementRef) {
+			scrollLength += this.footerElementRef.nativeElement.clientHeight;
 		}
 
 		let viewportLength = this.horizontal ? viewportWidth : viewportHeight;
