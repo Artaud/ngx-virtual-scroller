@@ -1,5 +1,5 @@
 {
-  "name": "@iharbeck/ngx-virtual-scroller",
+  "name": "@artaud/ngx-virtual-scroller",
   "version": "14.0.4",
   "scripts": {
     "ng": "ng",
