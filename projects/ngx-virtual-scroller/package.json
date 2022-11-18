@@ -1,5 +1,5 @@
 {
-  "name": "@artaud/ngx-virtual-scroller",
+  "name": "@jiri.richter/ngx-virtual-scroller",
   "version": "14.0.4",
   "peerDependencies": {
     "@angular/common": "^14.0.0",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/artaud/ngx-virtual-scroller.git"
+    "url": "git+https://github.com/jiri.richter/ngx-virtual-scroller.git"
   },
   "keywords": [
     "virtual scroll",
@@ -36,7 +36,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/artaud/ngx-virtual-scroller/issues"
+    "url": "https://github.com/jiri.richter/ngx-virtual-scroller/issues"
   },
-  "homepage": "https://github.com/artaud/ngx-virtual-scroller#readme"
+  "homepage": "https://github.com/jiri.richter/ngx-virtual-scroller#readme"
 }
