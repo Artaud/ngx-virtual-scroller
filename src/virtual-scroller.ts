@@ -830,7 +830,7 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
 					const footerHeight = this.footerElementRef.nativeElement.clientHeight
 					const containerHeight = this.contentElementRef.nativeElement.clientHeight
 
-					let offset = Math.max(scrollPosition - viewport.padding - containerOffset + containerHeight - footerHeight + headerHeight, 0);
+					let offset = Math.max(scrollPosition - viewport.padding - containerOffset + containerHeight - footerHeight + headerHeight + 1, 0);
 
           this.renderer.setStyle(this.footerElementRef.nativeElement, 'position', `absolute`);
           this.renderer.setStyle(this.footerElementRef.nativeElement, 'top', `0`);
